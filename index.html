@@ -1,0 +1,1316 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BASO GROUB — للخدمات</title>
+<meta name="description" content="BASO GROUB — خدمات احترافية لمتابعي وحسابات السوشيال ميديا">
+<!-- الشعار وأيقونات التطبيق (تظهر عند إضافة مختصر للشاشة الرئيسية) -->
+<link rel="icon" href="icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="BASO GROUB">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#C9A227">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:title" content="BASO GROUB — للخدمات">
+<meta property="og:description" content="خدمات سوشيال ميديا بلمسة ذهبية — متابعون، حماية حسابات وأكثر">
+<meta property="og:image" content="icons/logo-1024.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=El+Messiri:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9A227; --gold-hi:#E9CB6F; --gold-deep:#8F6B14;
+  --grad:linear-gradient(135deg,#F0D98C 0%,#D4AF37 45%,#A8801D 100%);
+  --ink:#26210F; --mut:#7B7360; --line:#EBE1C8;
+  --soft:#FBF7EC; --bg:#FFFFFF; --green:#1FA855;
+  --r:18px;
+  --shadow:0 14px 40px rgba(150,120,30,.12);
+  --shadow-lg:0 30px 80px rgba(45,35,5,.22);
+}
+html{scroll-behavior:smooth}
+body{font-family:"Cairo",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4,.brand-mark{font-family:"El Messiri","Cairo",serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+input,select,textarea{font-family:inherit;font-size:1rem;color:var(--ink)}
+.container{width:min(1120px,92%);margin-inline:auto}
+.ic{width:1.15em;height:1.15em;flex:none;vertical-align:-0.2em}
+.gold-t{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ===== شريط المقدمة ===== */
+#intro{position:fixed;inset:0;z-index:100;background:radial-gradient(120% 90% at 50% 0%,#FFFDF6 0%,#FFFFFF 55%,#FBF4E1 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:opacity .7s ease,visibility .7s}
+#intro.gone{opacity:0;visibility:hidden;pointer-events:none}
+.intro-inner{position:relative;z-index:2;width:min(520px,90%);text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.intro-mark{width:96px;height:96px;display:grid;place-items:center;border-radius:28px;background:#fff;box-shadow:0 10px 30px rgba(150,120,30,.25);border:1px solid var(--line);position:relative;animation:float 3s ease-in-out infinite}
+.intro-mark::after{content:"";position:absolute;inset:5px;border-radius:22px;padding:2px;background:var(--grad);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.intro-mark span{font-family:"El Messiri",serif;font-size:52px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.intro-mark.sm,.intro-mark{animation:float 3s ease-in-out infinite}
+.intro-mark.sm{width:64px;height:64px;border-radius:20px;animation:none}
+.intro-mark.sm span{font-size:34px}
+.intro-title{font-size:clamp(24px,5vw,36px);font-weight:700;color:var(--ink)}
+.intro-title em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro-sub{color:var(--mut);font-size:15px;margin-bottom:14px}
+.load-track{width:100%;height:9px;border-radius:99px;background:#F1EAD8;overflow:hidden;border:1px solid var(--line)}
+#intro-fill{height:100%;width:0;border-radius:99px;background:var(--grad);background-size:200% 100%;animation:shimmer 1.6s linear infinite;transition:width .18s linear}
+.load-row{width:100%;display:flex;justify-content:space-between;font-size:13px;color:var(--mut);margin-top:4px}
+#intro-pct{font-weight:700;color:var(--gold-deep);direction:ltr}
+#intro-skip{margin-top:18px;background:none;border:1px solid var(--line);color:var(--mut);border-radius:99px;padding:6px 22px;font-size:13px;transition:.25s}
+#intro-skip:hover{border-color:var(--gold);color:var(--gold-deep)}
+.intro-shine{position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent 0 78%,rgba(201,162,39,.16) 86%,transparent 94%);animation:spin 9s linear infinite;z-index:1}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shimmer{to{background-position:-200% 0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ===== الهيدر ===== */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--grad);color:#fff;font-size:24px;font-weight:700;box-shadow:0 6px 16px rgba(180,140,30,.4)}
+.brand-mark.sm{width:30px;height:30px;border-radius:9px;font-size:17px;display:inline-grid;vertical-align:middle}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-text b{font-family:"El Messiri",serif;font-size:19px;letter-spacing:.5px}
+.brand-text small{font-size:11px;color:var(--mut)}
+.wa-pill{display:flex;align-items:center;gap:7px;background:#F2FAF4;color:#128C46;border:1px solid #CBE8D5;padding:8px 16px;border-radius:99px;font-size:14px;font-weight:700;transition:.25s}
+.wa-pill:hover{background:var(--green);color:#fff;border-color:var(--green);transform:translateY(-1px)}
+
+/* ===== الهيرو ===== */
+.hero{padding:64px 0 30px;text-align:center;position:relative}
+.hero::before{content:"";position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:520px;height:520px;background:radial-gradient(circle,rgba(212,175,55,.12),transparent 65%);pointer-events:none}
+.hero-kicker{display:inline-block;font-size:13px;font-weight:700;color:var(--gold-deep);background:var(--soft);border:1px solid var(--line);border-radius:99px;padding:5px 18px;margin-bottom:16px}
+.hero-title{font-size:clamp(30px,5.4vw,50px);font-weight:700;line-height:1.35}
+.hero-title span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-desc{max-width:620px;margin:14px auto 26px;color:var(--mut);font-size:16px}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:38px}
+.hero-stats{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 14px;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:"El Messiri",serif;font-size:clamp(24px,3.4vw,34px);color:var(--gold-deep);line-height:1.2}
+.stat span{font-size:13px;color:var(--mut)}
+.stat-hl{background:linear-gradient(160deg,#FFFBEF,#FDF3D9);border-color:#EAD9A8}
+.visitor-wrap{display:flex;align-items:center;justify-content:center;gap:8px}
+@media(max-width:700px){.hero-stats{grid-template-columns:1fr}}
+
+/* ===== الأزرار ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:14px;padding:12px 26px;font-size:15px;font-weight:700;transition:.25s;cursor:pointer}
+.btn-gold{background:var(--grad);color:#fff;box-shadow:0 10px 26px rgba(190,150,40,.38)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(190,150,40,.5)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#3b341c;transform:translateY(-2px)}
+.btn-ghost{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--gold)}
+.btn-line{background:#fff;color:var(--mut);border:1px solid var(--line)}
+.btn-line:hover{color:var(--ink);border-color:#d8c9a2}
+.btn-block{width:100%}
+.btn-xs{padding:5px 12px;font-size:12px;border-radius:9px}
+.btn[disabled]{opacity:.55;pointer-events:none}
+
+/* ===== بطاقات الخدمات ===== */
+.sec-head{text-align:center;margin:44px 0 26px}
+.sec-head h3{font-size:clamp(24px,4vw,34px);position:relative;display:inline-block}
+.sec-head h3::after{content:"";display:block;width:64px;height:3px;border-radius:99px;background:var(--grad);margin:10px auto 0}
+.sec-head p{color:var(--mut);font-size:14px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px;padding-bottom:70px}
+.svc-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 22px;text-align:right;box-shadow:var(--shadow);transition:.3s;overflow:hidden;cursor:pointer}
+.svc-card::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--grad);opacity:0;transition:.3s}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:#E4D3A2}
+.svc-card:hover::before{opacity:1}
+.svc-logo{width:62px;height:62px;border-radius:18px;background:var(--soft);border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-deep);margin-bottom:14px}
+.svc-logo .ic{width:30px;height:30px}
+.svc-logo img{width:100%;height:100%;object-fit:cover;border-radius:18px}
+.svc-card h4{font-size:19px;margin-bottom:4px}
+.svc-card p{font-size:13.5px;color:var(--mut);min-height:38px}
+.svc-meta{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);font-size:13px;color:var(--gold-deep);font-weight:700}
+.svc-meta .go{width:30px;height:30px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;transition:.3s}
+.svc-card:hover .go{transform:scale(1.15)}
+
+/* ===== عرض الخدمة ===== */
+#view-service{padding:34px 0 80px;animation:fadeUp .45s ease}
+.back-btn{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);color:var(--mut);border-radius:99px;padding:8px 18px;font-size:14px;font-weight:700;margin-bottom:22px;transition:.25s}
+.back-btn:hover{color:var(--gold-deep);border-color:var(--gold)}
+.back-btn .ic.rot{transform:rotate(180deg)}
+.svc-hero{display:flex;align-items:center;gap:16px;background:linear-gradient(160deg,#FFFBEF,#FBF2DC);border:1px solid #EAD9A8;border-radius:22px;padding:22px;margin-bottom:10px;flex-wrap:wrap}
+.svc-hero .svc-logo{margin:0;width:70px;height:70px}
+.svc-hero h3{font-size:26px}
+.svc-hero p{color:#8a7a4c;font-size:14px}
+.sections-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:22px}
+.sec-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow);transition:.3s}
+.sec-card:hover{transform:translateY(-4px);border-color:#E4D3A2}
+.sec-card h5{font-size:17px;display:flex;align-items:center;gap:8px}
+.sec-card h5::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--grad);flex:none}
+.sec-card p{font-size:13.5px;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:11.5px;background:var(--soft);border:1px solid var(--line);border-radius:99px;padding:2px 11px;color:#8a7643}
+.sec-card .btn{margin-top:auto}
+.empty{ text-align:center;color:var(--mut);padding:50px 0}
+
+/* ===== المودال ===== */
+.modal-wrap{position:fixed;inset:0;z-index:70;display:none;align-items:flex-start;justify-content:center;background:rgba(30,24,8,.55);backdrop-filter:blur(6px);padding:26px 14px;overflow-y:auto}
+.modal-wrap.open{display:flex}
+.modal{width:100%;max-width:560px;background:#fff;border-radius:24px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.4);animation:pop .28s cubic-bezier(.2,.9,.3,1.2);margin:auto}
+.modal-admin{max-width:1000px}
+@keyframes pop{from{transform:translateY(18px) scale(.97);opacity:0}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;border-radius:24px 24px 0 0;z-index:3}
+.modal-head h3{font-size:20px}
+.modal-head small{color:var(--mut);font-size:12px}
+.icon-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--mut);display:grid;place-items:center;transition:.25s}
+.icon-btn:hover{color:#fff;background:#B03A2E;border-color:#B03A2E}
+.modal-body{padding:22px;max-height:calc(100dvh - 160px);overflow-y:auto}
+.order-ctx{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.order-ctx b{font-size:12.5px;background:var(--soft);border:1px solid var(--line);color:var(--gold-deep);border-radius:99px;padding:4px 14px}
+.field{display:block;margin-bottom:14px}
+.field>span{display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:#5d563f;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;outline:none;transition:.2s;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,39,.14)}
+.field.bad input,.field.bad select{border-color:#D8412F;box-shadow:0 0 0 4px rgba(216,65,47,.1)}
+.done-body{text-align:center}
+.done-mark{width:74px;height:74px;margin:6px auto 12px;border-radius:50%;background:#EFFAF2;color:var(--green);display:grid;place-items:center}
+.done-mark .ic{width:38px;height:38px}
+.done-body h4{font-size:22px;margin-bottom:6px}
+.done-body p{color:var(--mut);font-size:14px;margin-bottom:18px}
+.done-body .btn{margin-bottom:10px}
+
+/* ===== لوحة التحكم ===== */
+.admin-head>div{display:flex;flex-direction:column;gap:2px}
+.conn-badge{font-size:11px;font-weight:700;color:var(--mut)}
+.conn-badge.live{color:var(--green)}
+.tabs{display:flex;gap:6px;padding:12px 18px 0;border-bottom:1px solid var(--line);flex-wrap:wrap;position:sticky;top:0;background:#fff;z-index:2}
+.atab{background:none;border:none;padding:10px 16px;font-size:14px;font-weight:700;color:var(--mut);border-bottom:3px solid transparent;border-radius:8px 8px 0 0;transition:.2s}
+.atab:hover{color:var(--gold-deep)}
+.atab.active{color:var(--gold-deep);border-color:var(--gold)}
+.atab .badge{background:#B03A2E;color:#fff;font-size:10.5px;border-radius:99px;padding:1px 8px;vertical-align:2px}
+.tab-pane{display:none}
+.tab-pane.active{display:block;animation:fadeUp .3s ease}
+.a-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.a-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.a-title{font-size:16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.a-title img{width:38px;height:38px;border-radius:10px;object-fit:cover;border:1px solid var(--line)}
+.a-title .mono{width:38px;height:38px;border-radius:10px;background:var(--grad);color:#fff;display:inline-grid;place-items:center;font-family:"El Messiri",serif;font-size:19px}
+.a-sub{font-size:12px;color:var(--mut)}
+.a-secs{margin:12px 0;border:1px dashed var(--line);border-radius:12px;padding:10px;background:var(--soft)}
+.a-secrow{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin-bottom:8px;flex-wrap:wrap}
+.a-secrow:last-child{margin-bottom:0}
+.a-secrow b{font-size:14px}
+.a-in{border:1.5px solid var(--line);border-radius:10px;padding:8px 11px;outline:none;flex:1;min-width:130px;background:#fff}
+.a-in:focus{border-color:var(--gold)}
+.a-mini{font-size:12px;color:var(--mut);width:110px;flex:none}
+.danger{background:#fff;border:1px solid #F0CFC8;color:#B03A2E;border-radius:9px;padding:5px 11px;font-size:12px;font-weight:700;transition:.2s}
+.danger:hover{background:#B03A2E;color:#fff}
+.ok-btn{background:#fff;border:1px solid #CBE8D5;color:var(--green);border-radius:9px;padding:5px 11px;font-size:12px;font-weight:700;transition:.2s}
+.ok-btn:hover{background:var(--green);color:#fff}
+.order-card{border-left:4px solid var(--gold)}
+.order-card.done{border-left-color:#D8D2C2;opacity:.75}
+.order-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}
+.order-head b{font-size:15.5px}
+.order-time{font-size:11.5px;color:var(--mut)}
+.order-info{font-size:13px;color:#5c5540;margin:7px 0 4px}
+.order-info i{font-style:normal;color:var(--gold-deep);font-weight:700}
+.st-new,.st-done{font-size:11px;font-weight:700;border-radius:99px;padding:2px 11px}
+.st-new{background:#FCEFEC;color:#B03A2E}
+.st-done{background:#EFFAF2;color:var(--green)}
+.filter-chip{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:99px;padding:4px 14px;font-weight:700;color:var(--mut)}
+.filter-chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.big-stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
+.big-stat .stat{text-align:center;padding:22px 12px}
+.gate-box{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:40px 10px;width:min(340px,100%);margin:auto}
+.gate-box input{width:100%;text-align:center;border:1.5px solid var(--line);border-radius:12px;padding:11px;outline:none}
+.gate-box input:focus{border-color:var(--gold)}
+.gate-box p{color:var(--mut);font-size:13px}
+.admin-user-box{display:flex;align-items:center;gap:10px}
+.admin-user-box #admin-user{color:var(--gold-deep);font-weight:700}
+.gate-err{color:#B03A2E;font-size:13px;min-height:18px}
+.logo-prev{width:56px;height:56px;border-radius:12px;object-fit:cover;border:1px solid var(--line);background:var(--soft);display:none}
+.file-btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:6px;border:1px dashed var(--gold);color:var(--gold-deep);background:var(--soft);border-radius:10px;padding:7px 13px;font-size:12.5px;font-weight:700}
+.file-btn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+
+/* ===== الفوتر ===== */
+.footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#fff,#FBF7EC);padding:34px 0 22px;text-align:center}
+.footer-brand{font-family:"El Messiri",serif;font-size:20px;margin-bottom:12px}
+.footer-brand small{color:var(--mut);font-size:12px;font-family:"Cairo"}
+.footer-contact h4{font-size:15px;color:var(--gold-deep);margin-bottom:10px}
+.contact-chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:9px 20px;font-size:14px;color:#5c5540;box-shadow:var(--shadow);transition:.25s}
+.chip b{color:var(--ink);direction:ltr}
+.chip:hover{transform:translateY(-2px);border-color:var(--gold)}
+.copy{margin-top:18px;font-size:12px;color:var(--mut)}
+
+/* ===== توست ===== */
+#toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:11px 24px;border-radius:99px;font-size:14px;font-weight:700;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:.35s;z-index:120;max-width:90vw;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-thumb{background:#E3D5AE;border-radius:99px}::-webkit-scrollbar-track{background:#FBF8F0}
+[hidden]{display:none!important}
+@media(max-width:640px){
+  .modal-body{padding:16px}
+  .hero{padding-top:40px}
+  .svc-card{text-align:center}
+  .svc-logo{margin-inline:auto}
+  .a-mini{width:100%}
+}
+
+/* ===== تحسينات توافق الأجهزة والوضع الليلي — مستقلة عن Firebase ===== */
+.header-actions{display:flex;align-items:center;gap:8px}
+.theme-toggle{border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:99px;padding:8px 12px;font-size:13px;font-weight:700;white-space:nowrap}
+.device-choice-wrap{position:fixed;inset:0;z-index:150;background:rgba(10,12,18,.65);backdrop-filter:blur(7px);display:flex;align-items:center;justify-content:center;padding:18px}
+.device-choice-wrap[hidden]{display:none!important}
+.device-choice{width:min(440px,100%);background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:24px;padding:26px 20px;text-align:center;box-shadow:var(--shadow-lg)}
+.device-choice-logo{width:58px;height:58px;margin:0 auto 12px;display:grid;place-items:center;border-radius:17px;background:var(--grad);color:white;font:700 30px "El Messiri",serif}
+.device-choice h3{font-size:23px;margin-bottom:5px}
+.device-choice p{font-size:14px;color:var(--mut);margin-bottom:18px}
+.device-choice-options{display:grid;grid-template-columns:1fr;gap:9px}
+.device-choice-options button{padding:13px;border:1px solid var(--line);border-radius:13px;background:var(--soft);color:var(--ink);font:700 15px "Cairo",sans-serif}
+.device-choice-options button:hover{border-color:var(--gold);background:rgba(201,162,39,.12)}
+.device-auto{margin-top:13px;background:transparent;border:0;color:var(--mut);text-decoration:underline;font:13px "Cairo",sans-serif}
+body.device-phone .container{width:min(100% - 24px,600px)}
+body.device-phone .topbar-in{gap:8px;flex-wrap:wrap}
+body.device-phone .brand-text b{font-size:16px}
+body.device-phone .brand-text small{font-size:10px}
+body.device-phone .theme-toggle{padding:7px 9px;font-size:12px}
+body.device-phone .wa-pill{padding:7px 10px;font-size:12px}
+body.device-phone .hero{padding-top:30px}
+body.device-phone .hero-desc{font-size:14px}
+body.device-phone .services-grid{grid-template-columns:1fr;gap:13px}
+body.device-phone .svc-card{padding:20px 16px}
+body.device-phone .sections-grid{grid-template-columns:1fr}
+body.device-phone .modal-wrap{padding:8px}
+body.device-phone .modal{border-radius:18px}
+body.device-phone .modal-head{padding:14px}
+body.device-phone .modal-body{padding:14px;max-height:calc(100dvh - 125px)}
+body.device-tablet .container{width:min(1100px,94%)}
+body.device-tablet .services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+body.device-tablet .sections-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+body.device-computer .container{width:min(1240px,94%)}
+body.device-computer .services-grid{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+body.device-computer .sections-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+@media(min-width:900px){.device-choice-options{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:420px){
+ .topbar-in{gap:7px}
+ .brand{gap:7px}
+ .brand-mark{width:36px;height:36px;font-size:20px}
+ .brand-text b{font-size:16px}
+ .hero-title{font-size:clamp(26px,8vw,34px)}
+ .hero-btns .btn{width:100%}
+ .contact-chips{flex-direction:column;align-items:stretch}
+ .chip{justify-content:center}
+}
+html{ -webkit-text-size-adjust:100%; text-size-adjust:100% }
+body{min-height:100vh;min-height:100dvh}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+@supports(padding:max(0px)){.topbar-in{padding-top:max(12px,env(safe-area-inset-top))}.footer{padding-bottom:max(22px,env(safe-area-inset-bottom))}}
+/* الوضع الليلي يحافظ على ألوان العلامة الذهبية ومحتوى الموقع */
+html.dark-mode{
+ --ink:#F4F0E5;--mut:#B7B0A0;--line:#494333;--soft:#25251F;--bg:#171815;
+ --shadow:0 14px 40px rgba(0,0,0,.22);--shadow-lg:0 30px 80px rgba(0,0,0,.5);
+ color-scheme:dark;
+}
+html.dark-mode body{background:var(--bg);color:var(--ink)}
+html.dark-mode .topbar{background:rgba(23,24,21,.91)}
+html.dark-mode .stat,html.dark-mode .svc-card,html.dark-mode .sec-card,
+html.dark-mode .modal,html.dark-mode .modal-head,html.dark-mode .icon-btn,
+html.dark-mode .back-btn,html.dark-mode .a-card,html.dark-mode .a-secrow,
+html.dark-mode .a-in,html.dark-mode .field input,html.dark-mode .field select,
+html.dark-mode .field textarea,html.dark-mode .gate-box input,
+html.dark-mode .filter-chip,html.dark-mode .chip{background:#20211C;color:var(--ink);border-color:var(--line)}
+html.dark-mode .stat-hl,html.dark-mode .svc-hero{background:linear-gradient(160deg,#302B1B,#252219);border-color:#65542B}
+html.dark-mode .footer{background:linear-gradient(180deg,#171815,#211F18)}
+html.dark-mode .btn-dark{background:#E9CB6F;color:#211B0A}
+html.dark-mode .btn-ghost,html.dark-mode .btn-line,html.dark-mode .theme-toggle{background:#25251F;color:var(--ink);border-color:var(--line)}
+html.dark-mode .tabs{background:#20211C;border-color:var(--line)}
+html.dark-mode .a-secs{background:#25251F}
+html.dark-mode .a-secrow{background:#20211C}
+html.dark-mode .modal-head{background:#20211C}
+html.dark-mode #intro{background:radial-gradient(120% 90% at 50% 0%,#29271F 0%,#171815 55%,#252015 100%)}
+html.dark-mode .intro-mark{background:#20211C;border-color:var(--line)}
+html.dark-mode .load-track{background:#302D23;border-color:var(--line)}
+html.dark-mode .wa-pill{background:#1D3325;color:#8BE0A8;border-color:#315B3D}
+html.dark-mode .device-choice{background:#20211C}
+html.dark-mode .device-choice-options button{background:#292A23;color:var(--ink);border-color:var(--line)}
+html.dark-mode .order-info,html.dark-mode .field>span{color:#D0C8B5}
+html.dark-mode ::-webkit-scrollbar-thumb{background:#5B5238}
+html.dark-mode ::-webkit-scrollbar-track{background:#20211C}
+
+
+
+/* ===== إصلاح فعلي لتخطيط الهاتف: أولوية لقابلية القراءة ومنع التمرير الأفقي ===== */
+*,*::before,*::after{box-sizing:border-box}
+html{width:100%;max-width:100%;overflow-x:clip}
+body{width:100%;max-width:100%;overflow-x:clip;margin:0}
+img,svg,video,canvas{max-width:100%}
+button,input,select,textarea{max-width:100%;min-width:0}
+.container{width:min(1120px, calc(100% - 32px));}
+.topbar{width:100%;}
+.topbar-in{min-width:0;flex-wrap:wrap;column-gap:12px;row-gap:8px}
+.brand{min-width:0;flex:1 1 150px}
+.brand-text{min-width:0}
+.header-actions{flex:0 1 auto}
+.wa-pill{flex:0 0 auto}
+.hero-title{overflow-wrap:anywhere}
+.hero-desc{width:100%;overflow-wrap:anywhere}
+.services-grid,.sections-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));min-width:0}
+.svc-card,.sec-card,.stat{min-width:0;overflow-wrap:anywhere}
+.modal-wrap{padding:12px;overscroll-behavior:contain}
+.modal{min-width:0;max-width:100%;}
+.modal-head{gap:10px;min-width:0}
+.modal-head>*{min-width:0}
+.modal-body{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.field input,.field select,.field textarea,.a-in input,.a-in select,.a-in textarea{width:100%;min-width:0}
+
+@media (max-width:700px){
+  .container{width:calc(100% - 28px);}
+  .topbar-in{padding:10px 0;gap:8px}
+  .brand{flex:1 1 135px;gap:8px}
+  .brand-mark{width:38px;height:38px;font-size:21px;flex:0 0 38px}
+  .brand-text b{font-size:15px;line-height:1.25}
+  .brand-text small{font-size:10px}
+  .header-actions{flex:0 1 auto}
+  .theme-toggle{padding:8px 9px;font-size:11px;white-space:normal;line-height:1.3}
+  .wa-pill{padding:8px 10px;font-size:12px}
+  .hero{padding:34px 0 20px}
+  .hero::before{width:min(100vw,360px);height:360px;top:-15px}
+  .hero-kicker{font-size:11px;padding:5px 12px}
+  .hero-title{font-size:clamp(25px,7.2vw,34px);line-height:1.45;margin-inline:auto;max-width:100%}
+  .hero-desc{font-size:14px;line-height:1.9;margin:12px auto 20px}
+  .hero-btns{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:24px}
+  .hero-btns .btn{width:100%;min-height:46px;padding:12px 14px}
+  .hero-stats{grid-template-columns:1fr;gap:10px}
+  .stat{padding:14px 12px}
+  .stat b{font-size:27px}
+  .sec-head{margin:30px 0 18px}
+  .sec-head h3{font-size:25px}
+  .services-grid,.sections-grid{grid-template-columns:minmax(0,1fr);gap:12px;padding-bottom:36px;margin-top:16px}
+  .svc-card{padding:19px 16px;border-radius:17px}
+  .svc-card:hover,.sec-card:hover{transform:none}
+  .sec-card{padding:17px;border-radius:16px}
+  .svc-hero{padding:18px 14px}
+  .svc-hero h3{font-size:22px;overflow-wrap:anywhere}
+  .contact-chips{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+  .chip{justify-content:center;max-width:100%;overflow-wrap:anywhere}
+  .a-mini{width:100%;max-width:100%}
+  .modal-wrap{padding:8px;align-items:flex-start}
+  .modal{border-radius:18px;margin:auto 0;max-height:calc(100dvh - 16px);overflow:hidden}
+  .modal-head{padding:14px 15px}
+  .modal-head h3{font-size:17px;overflow-wrap:anywhere}
+  .modal-body{padding:15px;max-height:calc(100dvh - 100px);overflow-y:auto}
+  .modal-admin{width:100%;max-width:100%}
+  .admin-tabs,.atabs{max-width:100%;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
+  .admin-tabs>* ,.atabs>*{flex:0 0 auto}
+  .field{margin-bottom:12px}
+  .field>span{font-size:13px}
+  .btn{max-width:100%;white-space:normal}
+  .footer{padding-bottom:max(22px,env(safe-area-inset-bottom))}
+  #device-choice{padding:12px}
+  .device-choice{padding:22px 16px;border-radius:20px}
+  .device-choice h3{font-size:21px}
+  .device-choice-options{grid-template-columns:1fr}
+}
+@media (max-width:380px){
+  .container{width:calc(100% - 22px)}
+  .brand-mark{width:34px;height:34px;flex-basis:34px}
+  .brand-text b{font-size:14px}
+  .theme-toggle{font-size:10px;padding:7px}
+  .wa-pill{font-size:11px;padding:7px 8px}
+  .hero-title{font-size:25px}
+  .svc-card{padding:17px 13px}
+  .modal-wrap{padding:5px}
+  .modal{max-height:calc(100dvh - 10px)}
+  .modal-body{padding:12px;max-height:calc(100dvh - 88px)}
+}
+@media (min-width:701px) and (max-width:1024px){
+  .container{width:calc(100% - 40px)}
+  .hero{padding-top:48px}
+  .hero-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .services-grid,.sections-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></symbol>
+    <symbol id="i-tk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 10.5c.5 2 2.5 4 4.5 4.5l1.2-1.4 1.8.9c-.3 1-1.3 1.5-2.4 1.4-3.2-.4-6-3.2-6.4-6.4-.1-1.1.4-2.1 1.4-2.4l.9 1.8Z"/></symbol>
+    <symbol id="i-gl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10Z"/></symbol>
+    <symbol id="i-bl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><polyline points="22 4 12 14 9 11"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 17 5 12 12 7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+  </defs>
+</svg>
+
+<!-- مقدمة الترحيب -->
+<div id="intro">
+  <div class="intro-inner">
+    <div class="intro-mark"><span>B</span></div>
+    <h1 class="intro-title">مرحباً بكم في <em>BASO GROUB</em></h1>
+    <p class="intro-sub">للخدمات — نجهّز لك كل ما تحتاجه بأناقة وسرعة</p>
+    <div class="load-track"><div id="intro-fill"></div></div>
+    <div class="load-row"><span id="intro-pct">0%</span><span>جارٍ التحميل…</span></div>
+    <button id="intro-skip" type="button">تخطي &lsaquo;</button>
+  </div>
+  <div class="intro-shine"></div>
+</div>
+
+<header class="topbar">
+  <div class="container topbar-in">
+    <a class="brand" href="#" id="brand-home">
+      <span class="brand-mark">B</span>
+      <span class="brand-text"><b>BASO GROUB</b><small>للخدمات</small></span>
+    </a>
+    <div class="header-actions"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="تبديل الوضع الليلي">🌙 الوضع الليلي</button></div>
+    <a class="wa-pill" id="top-wa" href="#" target="_blank" rel="noopener">
+      <svg class="ic"><use href="#i-wa"/></svg><span>واتساب</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- الرئيسية -->
+  <section id="view-home">
+    <div class="container">
+      <div class="hero">
+        <p class="hero-kicker">منصة خدمات رقمية موثوقة</p>
+        <h2 class="hero-title">خدمات سوشيال ميديا <span>بلمسة ذهبية</span></h2>
+        <p class="hero-desc">متابعون، حماية حسابات، تكبير قنوات وأكثر — اختر الخدمة وقسماً واطلب الآن، وسيصل طلبك إلينا مباشرة.</p>
+        <div class="hero-btns">
+          <a class="btn btn-gold" href="#services-list">تصفح خدماتنا</a>
+          <a class="btn btn-dark" id="hero-wa" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> تواصل واتساب</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat stat-hl">
+            <b id="hero-members">8,000</b>
+            <span>عضو مشترك إلى الآن في صفحة <b class="gold-t">BASO GROUB</b></span>
+          </div>
+          <div class="stat"><b id="hero-services-count">0</b><span>خدمة رئيسية</span></div>
+          <div class="stat"><b class="visitor-wrap"><svg class="ic"><use href="#i-eye"/></svg><span id="hero-visits">—</span></b><span>زيارة للصفحة</span></div>
+        </div>
+      </div>
+
+      <div class="sec-head" id="services-list">
+        <h3>خدماتنا</h3>
+        <p>اختر خدمة لعرض أقسامها وطلب ما تحتاجه</p>
+      </div>
+      <div class="services-grid" id="services-grid"><!-- تُبنى بالجافاسكربت --></div>
+    </div>
+  </section>
+
+  <!-- تفاصيل خدمة -->
+  <section id="view-service" hidden>
+    <div class="container">
+      <button class="back-btn" id="btn-back" type="button"><svg class="ic rot"><use href="#i-back"/></svg> رجوع للخدمات</button>
+      <div id="service-body"><!-- تُبنى بالجافاسكربت --></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand"><span class="brand-mark sm">B</span> BASO GROUB <small>للخدمات</small></div>
+    <div class="footer-contact">
+      <h4>للتواصل</h4>
+      <div class="contact-chips">
+        <a class="chip" id="foot-wa" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> واتساب <b id="foot-wa-num">07726446644</b></a>
+        <a class="chip" id="foot-ig" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ig"/></svg> انستقرام <b>@muhaymin_baso</b></a>
+      </div>
+    </div>
+    <p class="copy">© <span id="year"></span> BASO GROUB — جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<!-- نافذة الطلب -->
+<div class="modal-wrap" id="modal-order" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <h3 id="om-title">طلب جديد</h3>
+      <button class="icon-btn" id="om-close" type="button" aria-label="إغلاق"><svg class="ic"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body" id="om-form">
+      <div class="order-ctx" id="om-ctx"></div>
+      <label class="field"><span><svg class="ic"><use href="#i-user"/></svg> الاسم الكامل *</span>
+        <input id="om-name" type="text" placeholder="اكتب اسمك الثلاثي" autocomplete="name"></label>
+      <label class="field"><span><svg class="ic"><use href="#i-phone"/></svg> رقم الهاتف *</span>
+        <input id="om-phone" type="tel" inputmode="tel" placeholder="07xxxxxxxxx" dir="ltr"></label>
+      <label class="field"><span><svg class="ic"><use href="#i-pin"/></svg> العنوان *</span>
+        <input id="om-address" type="text" placeholder="المحافظة - المدينة - أقرب نقطة دالة"></label>
+      <label class="field"><span><svg class="ic"><use href="#i-alert"/></svg> تحديد المشكلة *</span>
+        <select id="om-problem"></select></label>
+      <label class="field"><span><svg class="ic"><use href="#i-send"/></svg> ملاحظات (اختياري)</span>
+        <textarea id="om-notes" rows="3" placeholder="تفاصيل إضافية تساعدنا على تنفيذ طلبك بدقة"></textarea></label>
+      <button class="btn btn-gold btn-block" id="om-submit" type="button">إرسال الطلب</button>
+    </div>
+    <div class="modal-body done-body" id="om-done" hidden>
+      <div class="done-mark"><svg class="ic"><use href="#i-check"/></svg></div>
+      <h4>تم استلام طلبك بنجاح</h4>
+      <p>سُجّل طلبك في لوحة التحكم لدينا. لإيصاله فوراً على الواتساب اضغط الزر وأرسل الرسالة الجاهزة:</p>
+      <a class="btn btn-dark btn-block" id="om-wa" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> إرسال الطلب على الواتساب</a>
+      <button class="btn btn-ghost btn-block" id="om-copy" type="button">نسخ نص الطلب</button>
+      <button class="btn btn-line btn-block" id="om-done-close" type="button">إغلاق</button>
+    </div>
+  </div>
+</div>
+
+<!-- لوحة التحكم #baso -->
+<div class="modal-wrap" id="modal-admin" aria-hidden="true">
+  <div class="modal modal-admin" role="dialog" aria-modal="true">
+    <div class="modal-head admin-head">
+      <div><h3>لوحة تحكم BASO GROUB</h3><span id="admin-mode-badge" class="conn-badge"></span></div>
+      <div class="admin-user-box">
+        <span id="admin-user" class="a-sub" dir="ltr"></span>
+        <button class="danger" id="am-logout" type="button" hidden>خروج</button>
+        <button class="icon-btn" id="am-close" type="button" aria-label="إغلاق"><svg class="ic"><use href="#i-x"/></svg></button>
+      </div>
+    </div>
+
+    <div class="modal-body" id="admin-gate" hidden>
+      <div class="gate-box" id="gate-fb" hidden>
+        <div class="intro-mark sm"><span>B</span></div>
+        <h4>دخول مدير الموقع</h4>
+        <p>سجّل الدخول بالبريد الإلكتروني وكلمة المرور من حساب Firebase</p>
+        <input id="fb-email" type="email" placeholder="البريد الإلكتروني" dir="ltr" autocomplete="username">
+        <input id="fb-pass" type="password" placeholder="كلمة المرور" dir="ltr" autocomplete="current-password">
+        <button class="btn btn-gold btn-block" id="fb-login" type="button">دخول</button>
+        <span class="gate-err" id="gate-err"></span>
+      </div>
+      <div class="gate-box" id="gate-pin" hidden>
+        <div class="intro-mark sm"><span>B</span></div>
+        <h4>هذه المنطقة محمية (وضع محلي)</h4>
+        <p>أدخل رمز الدخول للمتابعة</p>
+        <input id="admin-pin" type="password" inputmode="numeric" placeholder="رمز الدخول" dir="ltr" autocomplete="off">
+        <button class="btn btn-gold btn-block" id="admin-unlock" type="button">فتح لوحة التحكم</button>
+        <span class="gate-err" id="gate-err-local"></span>
+      </div>
+    </div>
+
+    <div id="admin-app">
+      <nav class="tabs">
+        <button class="atab active" data-tab="orders" type="button">الطلبات <span class="badge" id="orders-new-count">0</span></button>
+        <button class="atab" data-tab="services" type="button">الخدمات والأقسام</button>
+        <button class="atab" data-tab="stats" type="button">الزيارات والإحصاء</button>
+        <button class="atab" data-tab="settings" type="button">الإعدادات</button>
+      </nav>
+      <div class="modal-body">
+        <div class="tab-pane active" id="tab-orders"><div id="orders-tools"></div><div id="orders-list"></div></div>
+        <div class="tab-pane" id="tab-services"><div id="admin-services-list"></div></div>
+        <div class="tab-pane" id="tab-stats"><div id="stats-body"></div></div>
+        <div class="tab-pane" id="tab-settings"><div id="settings-body"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" role="status"></div>
+
+<!-- اختيار نوع الجهاز: تفضيل عرض محلي لا يغيّر بيانات Firebase -->
+<div class="device-choice-wrap" id="device-choice" hidden>
+  <section class="device-choice" role="dialog" aria-modal="true" aria-labelledby="device-title">
+    <div class="device-choice-logo">B</div>
+    <h3 id="device-title">أهلاً بك في BASO GROUB</h3>
+    <p>ما الجهاز الذي تستخدمه؟ سنضبط طريقة العرض لتناسب شاشتك.</p>
+    <div class="device-choice-options">
+      <button type="button" data-device="phone">📱 هاتف</button>
+      <button type="button" data-device="tablet">▣ آيباد / تابلت</button>
+      <button type="button" data-device="computer">🖥️ كمبيوتر</button>
+    </div>
+    <button class="device-auto" type="button" id="device-auto">اختيار تلقائي في المرات القادمة</button>
+  </section>
+</div>
+
+<script type="module">
+/* ================= الأدوات ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const fmtN=n=>Number(n||0).toLocaleString('en-US');
+const toast=(m)=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._x);t._x=setTimeout(()=>t.classList.remove('show'),2800)};
+function ico(k){const map={ig:'i-ig',tg:'i-tg',tk:'i-tk',wa:'i-wa',gl:'i-gl',bl:'i-bl'};return `<svg class="ic"><use href="#${map[k]||'i-bl'}"/></svg>`}
+async function guard(p){try{await p;return true}catch(e){toast('⛔ تعذر الحفظ على السيرفر — تأكد من تسجيل دخول المدير ونشر قواعد Rules');console.warn(e);return false}}
+
+/* ================= إعدادات Firebase =================
+   ضع بيانات مشروعك (Firebase Console > Project settings > Your apps) داخل الأقواس
+   أو أسهل: افتح لوحة التحكم #baso > الإعدادات > الصق الإعدادات واحفظ.
+===================================================== */
+const FIREBASE_CONFIG={
+  apiKey:"AIzaSyBsGmlF6eV4FRvFnDcnVmRCrGAEGrZflTE",
+  authDomain:"baso-af795.firebaseapp.com",
+  projectId:"baso-af795",
+  storageBucket:"baso-af795.firebasestorage.app",
+  messagingSenderId:"316732347670",
+  appId:"1:316732347670:web:d7d6a23ad0991f7936ec37",
+  databaseURL:"https://baso-af795-default-rtdb.firebaseio.com"
+};
+const CONFIG_LS='baso_fb_config';
+function activeConfig(){
+  const base={...FIREBASE_CONFIG};
+  try{const s=JSON.parse(localStorage.getItem(CONFIG_LS)||'null');if(s&&s.apiKey)return Object.assign(base,s)}catch(e){}
+  return base;
+}
+
+/* ================= البيانات الافتراضية ================= */
+const DEFAULT_SETTINGS={whatsapp:'07726446644',instagram:'@muhaymin_baso',members:8000,pin:''};
+const DEFAULT_SERVICES=[
+ {id:'s-ig',name:'خدمات انستقرام',desc:'تكبير حسابك وحمايته بسرية تامة وأداء سريع',logo:null,icon:'ig',sections:[
+   {id:'c-ig-1',name:'زيادة عدد المتابعين',desc:'متابعون حقيقيون بجودة عالية وبضمان',options:['متابعون جدد','نقص مفاجئ بالمتابعين','طلب كمية كبيرة','توصيل بطيء أو متوقف']},
+   {id:'c-ig-2',name:'تأمين الحسابات واسترجاعها',desc:'تأمين كامل أو استرجاع حساب مفقود',options:['حساب مخترق','استرجاع حساب','تأمين مستقبلي','مشكلة تسجيل دخول']},
+   {id:'c-ig-3',name:'زيادة اللايكات والتفاعل',desc:'لايكات وتعليقات ترفع وصول منشورك',options:['لايكات لمنشور','لايكات لمنشورات يومية','تعليقات حقيقية']},
+   {id:'c-ig-4',name:'مشاهدات الريلز والستوري',desc:'رفع مشاهدات الريلز والقصص بسرعة',options:['مشاهدات ريلز','مشاهدات ستوري','حفظ ومشاركة']}]},
+ {id:'s-tg',name:'خدمات تيليجرام',desc:'تضخيم قنواتك ومجموعاتك بأعضاء فاعلين',logo:null,icon:'tg',sections:[
+   {id:'c-tg-1',name:'إضافة أعضاء للمجموعات',desc:'أعضاء حقيقيون لمجموعتك أو قناتك',options:['مجموعة','قناة','كمية كبيرة','توزيع على عدة مجموعات']},
+   {id:'c-tg-2',name:'اشتراك تيليجرام بريميوم',desc:'تفعيل بريميوم لحسابك رسمياً',options:['شهر','3 أشهر','6 أشهر','سنة']},
+   {id:'c-tg-3',name:'مشاهدات وتفعيل القناة',desc:'مشاهدات للمنشورات وتفعيل التفاعل',options:['مشاهدات منشورات','تفعيل أعضاء','حضور مباشر']}]},
+ {id:'s-tk',name:'خدمات تيك توك',desc:'خوارزمية أسرع ونمو حقيقي لحسابك',logo:null,icon:'tk',sections:[
+   {id:'c-tk-1',name:'زيادة المتابعين',desc:'متابعون عرب وأجانب حسب طلبك',options:['متابعون عرب','متابعون أجانب','مزيج','مشكلة بالنقص']},
+   {id:'c-tk-2',name:'مشاهدات الفيديو',desc:'مشاهدات عالية السرعة لأي فيديو',options:['عدد محدد','حملات يومية','فيديو واحد محدد']},
+   {id:'c-tk-3',name:'لايكات وتعليقات',desc:'تفاعل يرفع الفيديو للصفحة الرئيسية',options:['لايكات','تعليقات مخصصة','إعجاب + مشاهدات']}]},
+ {id:'s-wa',name:'خدمات واتساب',desc:'أدوات احترافية للعمل والتسويق',logo:null,icon:'wa',sections:[
+   {id:'c-wa-1',name:'تهيئة واتساب بزنس',desc:'إعداد متجر وبروفايل احترافي كامل',options:['تهيئة جديدة','تطوير حساب قديم','ربط متجر','قائمة منتجات']},
+   {id:'c-wa-2',name:'أدوات إدارة المجموعات',desc:'حاضنات وإعداد مجموعات منظمة',options:['إعداد مجموعة','حماية من الحظر','أدوات إدارة']}]},
+ {id:'s-gl',name:'خدمات جوجل',desc:'حضورك على الخريطة يبدأ من هنا',logo:null,icon:'gl',sections:[
+   {id:'c-gl-1',name:'توثيق خرائط جوجل',desc:'إصدار وتثبيت خريطة لمشروعك',options:['إصدار جديد','استرجاع خريطة','مشكلة توثيق']},
+   {id:'c-gl-2',name:'إنشاء بريد جيميل',desc:'حسابات جوجل بإعداد آمن',options:['حساب عمل','حساب شخصي','عدة حسابات']}]},
+ {id:'s-bl',name:'خدمات أخرى',desc:'مواقع، تصاميم، وحلول رقمية مخصصة',logo:null,icon:'bl',sections:[
+   {id:'c-bl-1',name:'تصميم شعار وهوية',desc:'لوجو احترافي بهوية بصرية كاملة',options:['شعار فقط','هوية كاملة','تعديل شعار']},
+   {id:'c-bl-2',name:'إنشاء مواقع ومتاجر',desc:'صفحة هبوط أو متجر إلكتروني',options:['صفحة تعريفية','متجر','لوحة تحكم']},
+   {id:'c-bl-3',name:'استشارة خدمة غير موجودة',desc:'اكتب احتياجك ونحن ننفذه',options:['خدمات سوشيال أخرى','حلول خاصة','أخرى']},]}
+];
+
+/* ================= طبقة التخزين ================= */
+const FBJS='https://www.gstatic.com/firebasejs/10.12.2/';
+let MODE='local', db=null, FBAPP=null, AUTH=null, adminUser=null, RULES_LOCKED=false;
+const LSKEY=k=>'baso.'+k;
+function localTree(){try{return JSON.parse(localStorage.getItem(LSKEY+'tree')||'{}')}catch(e){return{}}}
+function localSet(path,val){const t=localTree();const parts=path.split('/');let o=t;for(let i=0;i<parts.length-1;i++)o=o[parts[i]]=o[parts[i]]||{};o[parts[parts.length-1]]=val;localStorage.setItem(LSKEY+'tree',JSON.stringify(t))}
+function localGet(path){const parts=path.split('/');let o=localTree();for(const p of parts){if(o==null)return null;o=o[p]}return o===undefined?null:o}
+
+async function initFirebase(){
+  const cfg=activeConfig();
+  if(!cfg||!cfg.apiKey||!cfg.projectId)return false;
+  const cands=[];
+  if(cfg.databaseURL)cands.push(cfg.databaseURL);
+  cands.push(`https://${cfg.projectId}-default-rtdb.firebaseio.com`,
+             `https://${cfg.projectId}-default-rtdb.europe-west1.firebasedatabase.app`);
+  try{
+    const [{initializeApp},{getDatabase,ref,get}]=await Promise.all([
+      import('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'),
+      import('https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js')
+    ]);
+    let i=1;let lastApp=null;
+    for(const url of [...new Set(cands)]){
+      try{
+        const app=initializeApp({...cfg,databaseURL:url},'baso'+i++);
+        lastApp=app;
+        const d=getDatabase(app);
+        const res=await Promise.race([
+          get(ref(d,'baso/services')).then(()=> 'ok').catch(err=>(String((err&&(err.code||err.message))||'').includes('permission-denied')?'locked':'fail')),
+          new Promise(r=>setTimeout(()=>r('timeout'),4000))
+        ]);
+        if(res==='ok'){db=d;FBAPP=app;RULES_LOCKED=false;MODE='firebase';setupAuth();console.info('✅ متصل بقاعدة البيانات:',url);return true}
+        if(res==='locked'){db=d;FBAPP=app;RULES_LOCKED=true;MODE='firebase';setupAuth();console.warn('⚠️ قاعدة البيانات موجودة لكن قواعد Rules تمنع الوصول — الصق القواعد المرسلة لك في تبويب Rules');return true}
+      }catch(e){console.warn('تعذر الاتصال عبر',url,e)}
+    }
+    if(lastApp){FBAPP=lastApp;setupAuth()}
+    console.warn('لم يتم إنشاء Realtime Database بعد — البيانات محلية مؤقتاً، ويمكن لمدير Firebase تسجيل الدخول بالبريد الآن');
+    db=null;return false;
+  }catch(e){console.warn('Firebase غير متاح، تم التحويل للوضع المحلي:',e);db=null;return false}
+}
+async function dbGet(path){
+  if(MODE==='firebase'&&db){const{ref,get}=await import('https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js');const v=await get(ref(db,'baso/'+path));return v?v.val():null}
+  return localGet(path);
+}
+async function dbSet(path,val){
+  localSet(path,val);
+  if(MODE==='firebase'&&db){const{ref,set}=await import('https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js');await set(ref(db,'baso/'+path),val)}
+}
+async function dbIncr(path,by){
+  if(MODE==='firebase'&&db){
+    try{const{ref,increment,update}=await import('https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js');
+      await update(ref(db,'baso/'+path),{[path.split('/').pop()]:increment(by)});
+    }catch(e){localSet(path,(Number(localGet(path))||0)+by)}
+  }else localSet(path,(Number(localGet(path))||0)+by);
+}
+
+async function dbDel(path){
+  const parts=path.split('/');const t=localTree();let o=t;
+  for(let i=0;i<parts.length-1;i++)o=o&&o[parts[i]];
+  if(o){delete o[parts[parts.length-1]];localStorage.setItem(LSKEY+'tree',JSON.stringify(t))}
+  if(MODE==='firebase'&&db){const{ref,remove}=await import(FBJS+'firebase-database.js');await remove(ref(db,'baso/'+path))}
+}
+async function setupAuth(){
+  try{
+    const {getAuth,onAuthStateChanged}=await import(FBJS+'firebase-auth.js');
+    AUTH=getAuth(FBAPP);
+    onAuthStateChanged(AUTH,u=>{
+      adminUser=u;
+      if($('#modal-admin').classList.contains('open')){
+        if(u){openAdminPanel()}
+        else{showGate(FBAPP?'fb':'pin')}
+      }
+    });
+  }catch(e){console.warn('تعذر تهيئة المصادقة:',e)}
+}
+function authErr(e){
+  const c=(e&&e.code)||'';
+  if(/invalid-credential|user-not-found|wrong-password|invalid-login-credentials/.test(c))return 'البريد أو كلمة المرور غير صحيحة';
+  if(/too-many-requests/.test(c))return 'محاولات كثيرة — انتظر قليلاً ثم جرّب';
+  if(/network-request-failed/.test(c))return 'تعذر الاتصال بالإنترنت';
+  if(/not-configured|operation-not-allowed/.test(c))return 'فعّل أولاً: Authentication › Sign-in method › Email/Password';
+  if(/invalid-email/.test(c))return 'صيغة البريد الإلكتروني غير صحيحة';
+  return 'خطأ: '+((e&&e.message)||e);
+}
+
+/* ================= الحالة العامة ================= */
+let S={services:[],orders:[],settings:{...DEFAULT_SETTINGS},visits:0};
+function normOrders(v){if(!v)return[];const a=Array.isArray(v)?v:Object.values(v);return a.filter(o=>o&&o.id&&o.ts).sort((x,y)=>y.ts-x.ts)}
+async function loadAll(){
+  S.services=(await dbGet('services').catch(()=>null))||JSON.parse(JSON.stringify(DEFAULT_SERVICES));
+  S.orders=normOrders(await dbGet('orders').catch(()=>null));
+  S.settings=Object.assign({},DEFAULT_SETTINGS,(await dbGet('settings').catch(()=>null))||{});
+  S.visits=Number(await dbGet('stats/visitors').catch(()=>null))||0;
+  if(!Array.isArray(S.services)||!S.services.length)S.services=JSON.parse(JSON.stringify(DEFAULT_SERVICES));
+}
+async function countVisit(){
+  const first=!sessionStorage.getItem('baso.counted');
+  if(first){sessionStorage.setItem('baso.counted','1');await dbIncr('stats/visitors',1)}
+  S.visits=Number(await dbGet('stats/visitors').catch(()=>null))||S.visits;
+}
+function saveServices(){return dbSet('services',S.services)}
+function saveOrder(o){return dbSet('orders/'+o.id,o)}
+function removeOrder(id){return dbDel('orders/'+id)}
+function saveSettings(){return dbSet('settings',S.settings)}
+
+/* ================= واتساب ================= */
+function intlPhone(raw){
+  let d=String(raw||'').replace(/\D/g,'');
+  if(d.startsWith('00964'))d=d.slice(2);
+  else if(d.startsWith('964'))return d.slice(0,12);
+  else if(d.startsWith('0'))d='964'+d;
+  return d;
+}
+function waBase(){return '964'+String(S.settings.whatsapp||'7726446644').replace(/\D/g,'').replace(/^964/,'').replace(/^0/,'')}
+function orderText(o){
+  return `طلب جديد — BASO GROUB\n`+
+  `الخدمة: ${o.service}\nالقسم: ${o.section}\n`+
+  `الاسم: ${o.name}\nالرقم: ${o.phone}\nالعنوان: ${o.address}\n`+
+  `المشكلة: ${o.problem}`+(o.notes?`\nملاحظات: ${o.notes}`:'')+
+  `\nوقت الطلب: ${new Date(o.ts).toLocaleString('ar-IQ')}`;
+}
+function waLink(o){return `https://wa.me/${waBase()}?text=${encodeURIComponent(orderText(o))}`}
+
+/* ================= المقدمة والتحميل ================= */
+const INTRO_MS=1300;
+function runIntro(){
+  const start=performance.now();let cur=0;let done=false;
+  const fill=$('#intro-fill'),pct=$('#intro-pct');
+  function finish(){
+    if(done)return;done=true;
+    fill.style.width='100%';pct.textContent='100%';
+    setTimeout(()=>{$('#intro').classList.add('gone')},450);
+  }
+  (function tick(now){
+    if(done)return;
+    const p=Math.min(100,(now-start)/INTRO_MS*100);
+    cur=Math.max(cur,p);
+    fill.style.width=cur+'%';pct.textContent=Math.round(cur)+'%';
+    if(p>=100)finish();else requestAnimationFrame(tick);
+  })(start);
+  $('#intro-skip').addEventListener('click',finish);
+}
+
+/* ================= العرض العام ================= */
+function applyBranding(){
+  const wa=S.settings.whatsapp||'07726446644';
+  const ig=S.settings.instagram||'@muhaymin_baso';
+  $('#foot-wa-num').textContent=wa;
+  $('#foot-ig').querySelector('b').textContent=ig;
+  $('#foot-ig').href='https://instagram.com/'+ig.replace(/^@/,'');
+  const wl='https://wa.me/'+waBase();
+  $('#top-wa').href=wl;$('#hero-wa').href=wl;$('#foot-wa').href=wl;
+  $('#hero-members').textContent=fmtN(S.settings.members);
+  $('#hero-visits').textContent=fmtN(S.visits);
+  $('#year').textContent=new Date().getFullYear();
+}
+function showView(v){
+  $('#view-home').hidden=v!=='home';
+  $('#view-service').hidden=v!=='service';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function svcLogoHTML(s,cls=''){
+  if(s.logo)return `<div class="svc-logo ${cls}"><img src="${s.logo}" alt=""></div>`;
+  return `<div class="svc-logo ${cls}">${ico(s.icon||'bl')}</div>`;
+}
+function renderHome(){
+  $('#hero-services-count').textContent=S.services.length;
+  $('#services-grid').innerHTML=S.services.map(s=>`
+    <article class="svc-card" data-svc="${s.id}" tabindex="0">
+      ${svcLogoHTML(s)}
+      <h4>${esc(s.name)}</h4>
+      <p>${esc(s.desc||'')}</p>
+      <div class="svc-meta"><span>${(s.sections||[]).length} قسم</span><span class="go"><svg class="ic"><use href="#i-back"/></svg></span></div>
+    </article>`).join('');
+  $$('#services-grid .svc-card').forEach(c=>{
+    const open=()=>{renderService(c.dataset.svc);showView('service')};
+    c.addEventListener('click',open);
+    c.addEventListener('keydown',e=>{if(e.key==='Enter')open()});
+  });
+}
+let curCtx=null,LAST_ORDER=null;
+function renderService(id){
+  const s=S.services.find(x=>x.id===id);if(!s)return showView('home');
+  $('#service-body').innerHTML=`
+    <div class="svc-hero">${svcLogoHTML(s)}<div><h3>${esc(s.name)}</h3><p>${esc(s.desc||'')}</p></div></div>
+    <div class="sec-head" style="margin:26px 0 4px"><h3>الأقسام</h3><p>اختر القسم المناسب واضغط اطلب الآن لتعبئة بياناتك</p></div>
+    <div class="sections-grid">${(s.sections||[]).map(c=>`
+      <article class="sec-card">
+        <h5>${esc(c.name)}</h5>
+        <p>${esc(c.desc||'')}</p>
+        ${(c.options&&c.options.length)?`<div class="chips">${c.options.slice(0,4).map(o=>`<span>${esc(o)}</span>`).join('')}</div>`:''}
+        <button class="btn btn-gold" data-sec="${c.id}">اطلب الآن</button>
+      </article>`).join('')||'<p class="empty">لا توجد أقسام بعد لهذه الخدمة</p>'}
+      </div>`;
+  $$('#service-body [data-sec]').forEach(b=>b.addEventListener('click',()=>openOrder(s.id,b.dataset.sec)));
+}
+
+/* ================= نافذة الطلب ================= */
+const PROB_FALLBACK=['طلب جديد','مشكلة في الحساب','تأخر في التنفيذ','مشكلة في الاشتراك','أخرى'];
+function openOrder(svcId,secId){
+  const s=S.services.find(x=>x.id===svcId);const c=(s.sections||[]).find(x=>x.id===secId);if(!c)return;
+  curCtx={svc:s,sec:c};
+  $('#om-title').textContent='طلب: '+c.name;
+  $('#om-ctx').innerHTML=`<b>${esc(s.name)}</b><b>${esc(c.name)}</b>`;
+  const probs=(c.options&&c.options.length)?c.options:PROB_FALLBACK;
+  $('#om-problem').innerHTML='<option value="" disabled selected>— اختر المشكلة المطلوبة —</option>'+probs.map(p=>`<option value="${esc(p)}">${esc(p)}</option>`).join('');
+  ['om-name','om-phone','om-address','om-notes'].forEach(i=>$('#'+i).value='');
+  $$('#om-form .field').forEach(f=>f.classList.remove('bad'));
+  $('#om-form').hidden=false;$('#om-done').hidden=true;
+  openModal('#modal-order');
+}
+function badField(id){const f=$('#'+id).closest('.field');if(f)f.classList.add('bad');$('#'+id).focus()}
+async function submitOrder(){
+  if(!curCtx)return;
+  const name=$('#om-name').value.trim(),phone=$('#om-phone').value.trim(),
+        address=$('#om-address').value.trim(),problem=$('#om-problem').value,notes=$('#om-notes').value.trim();
+  $$('#om-form .field').forEach(f=>f.classList.remove('bad'));
+  if(name.length<3)return badField('om-name'),toast('فضلاً اكتب اسمك الكامل');
+  if(!/^0?7\d{9}$/.test(phone.replace(/\s|-/g,'')))return badField('om-phone'),toast('رقم الهاتف يجب أن يكون مثل: 07xxxxxxxxx');
+  if(address.length<3)return badField('om-address'),toast('فضلاً اكتب عنوانك');
+  if(!problem)return badField('om-problem'),toast('فضلاً حدد المشكلة المطلوبة');
+  const btn=$('#om-submit');btn.disabled=true;
+  const o={id:uid(),ts:Date.now(),service:curCtx.svc.name,section:curCtx.sec.name,name,phone,address,problem,notes,status:'new'};
+  LAST_ORDER=o;
+  S.orders.unshift(o);
+  try{await saveOrder(o)}catch(e){toast('تحذير: لم يتم حفظ الطلب في السيرفر، أرسله على واتساب')}
+  btn.disabled=false;
+  $('#om-form').hidden=true;$('#om-done').hidden=false;
+  $('#om-wa').href=waLink(o);
+}
+function openModal(sel){$(sel).classList.add('open');$(sel).setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeModal(sel){$(sel).classList.remove('open');$(sel).setAttribute('aria-hidden','true');document.body.style.overflow=''}
+function bindOrderModal(){
+  const close=()=>closeModal('#modal-order');
+  $('#om-close').addEventListener('click',close);
+  $('#om-done-close').addEventListener('click',close);
+  $('#om-submit').addEventListener('click',submitOrder);
+  $('#om-copy').addEventListener('click',async()=>{
+    if(!LAST_ORDER)return toast('لا يوجد طلب بعد');
+    try{await navigator.clipboard.writeText(orderText(LAST_ORDER));toast('تم نسخ نص الطلب')}catch(e){toast('تعذر النسخ من متصفحك')}
+  });
+  $('#modal-order').addEventListener('click',e=>{if(e.target.id==='modal-order'&&!$('#om-form').hidden)close()});
+}
+
+/* ================= لوحة التحكم (#baso) ================= */
+const ADMIN_HASH='#baso';
+let orderFilter='new';
+function adminUnlocked(){return sessionStorage.getItem('baso_admin_ok')==='1'}
+function showGate(which){
+  $('#admin-gate').hidden=false;$('#admin-app').style.display='none';
+  $('#gate-fb').hidden=which!=='fb';$('#gate-pin').hidden=which!=='pin';
+  $('#gate-err').textContent='';$('#gate-err-local').textContent='';
+  setTimeout(()=>{(which==='fb'?$('#fb-email'):$('#admin-pin')).focus()},150);
+}
+async function openAdminPanel(){
+  $('#admin-gate').hidden=true;$('#admin-app').style.display='';
+  const chip=$('#admin-user'),out=$('#am-logout');
+  if(adminUser){chip.textContent='👤 '+(adminUser.email||'مدير');out.hidden=false}
+  else{chip.textContent='وضع محلي (تجريبي)';out.hidden=true}
+  if(!$('#modal-admin').classList.contains('open'))openModal('#modal-admin');
+  await refreshAdminData();renderAdmin();
+}
+async function handleHash(){
+  if(location.hash===ADMIN_HASH){
+    await refreshAdminData().catch(()=>{});
+    if(FBAPP&&!adminUser){showGate('fb');openModal('#modal-admin')}
+    else if(!FBAPP&&S.settings.pin&&!adminUnlocked()){showGate('pin');openModal('#modal-admin')}
+    else{openAdminPanel()}
+  }else if($('#modal-admin').classList.contains('open')){
+    closeModal('#modal-admin');
+  }
+}
+async function refreshAdminData(){await loadAll()}
+function unlockAdmin(){
+  if($('#admin-pin').value===String(S.settings.pin)){
+    sessionStorage.setItem('baso_admin_ok','1');
+    $('#admin-gate').hidden=true;$('#admin-app').style.display='';
+    renderAdmin();toast('مرحباً بك في لوحة التحكم');
+  }else{$('#gate-err-local').textContent='رمز غير صحيح، حاول مجدداً';$('#admin-pin').focus()}
+}
+async function fbLogin(){
+  const em=$('#fb-email').value.trim().toLowerCase(),pw=$('#fb-pass').value;
+  if(!em||!pw){$('#gate-err').textContent='أدخل البريد وكلمة المرور أولاً';return}
+  const b=$('#fb-login');b.disabled=true;$('#gate-err').textContent='جارٍ التحقق…';
+  try{
+    const {getAuth,signInWithEmailAndPassword}=await import(FBJS+'firebase-auth.js');
+    await signInWithEmailAndPassword(getAuth(FBAPP),em,pw);
+    b.disabled=false;$('#gate-err').textContent='';$('#fb-pass').value='';
+    toast('أهلاً بك — تم تسجيل الدخول');openAdminPanel();
+  }catch(e){b.disabled=false;$('#gate-err').textContent=authErr(e)}
+}
+async function fbLogout(){
+  try{const{getAuth,signOut}=await import(FBJS+'firebase-auth.js');await signOut(getAuth(FBAPP))}catch(e){}
+  toast('تم تسجيل الخروج');
+  history.replaceState(null,'',location.pathname+location.search);
+}
+function renderAdmin(){
+  const badge=$('#admin-mode-badge');
+  badge.textContent=MODE==='firebase'?(RULES_LOCKED?'⚠️ متصل — Rules مقفلة، انشر القواعد أولاً':'● متصل بـ Firebase'):'● وضع تجريبي محلي (الجهاز الحالي)';
+  badge.className='conn-badge'+(MODE==='firebase'?' live':'');
+  renderOrders();renderSvcAdmin();renderStats();renderSettingsForm();
+}
+
+/* ---- الطلبات ---- */
+function renderOrders(){
+  const news=S.orders.filter(o=>o.status==='new').length;
+  $('#orders-new-count').textContent=news;
+  $('#orders-new-count').style.display=news?'':'none';
+  $('#orders-tools').innerHTML=`
+    <div class="a-row" style="margin-bottom:12px">
+      <button class="filter-chip ${orderFilter==='new'?'on':''}" data-f="new">الجديدة (${S.orders.filter(o=>o.status==='new').length})</button>
+      <button class="filter-chip ${orderFilter==='done'?'on':''}" data-f="done">المكتملة</button>
+      <button class="filter-chip ${orderFilter==='all'?'on':''}" data-f="all">الكل (${S.orders.length})</button>
+    </div>`;
+  $$('#orders-tools .filter-chip').forEach(b=>b.addEventListener('click',()=>{orderFilter=b.dataset.f;renderOrders()}));
+  const list=S.orders.filter(o=>orderFilter==='all'||o.status===orderFilter);
+  $('#orders-list').innerHTML=list.length?list.map(o=>`
+    <div class="a-card order-card ${o.status}">
+      <div class="order-head">
+        <b>${esc(o.name)} <span class="st-${o.status}">${o.status==='new'?'جديد':'مكتمل'}</span></b>
+        <span class="order-time">${new Date(o.ts).toLocaleString('ar-IQ')}</span>
+      </div>
+      <div class="order-info"><i>الخدمة:</i> ${esc(o.service)} — <i>القسم:</i> ${esc(o.section)}</div>
+      <div class="order-info"><i>المشكلة:</i> ${esc(o.problem)} ${o.notes?('— <i>ملاحظات:</i> '+esc(o.notes)):''}</div>
+      <div class="order-info"><i>الهاتف:</i> <span dir="ltr">${esc(o.phone)}</span> — <i>العنوان:</i> ${esc(o.address)}</div>
+      <div class="a-row" style="margin-top:10px">
+        <a class="btn btn-dark btn-xs" href="${waLink(o)}" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg> رد على الزبون</a>
+        ${o.status==='new'?`<button class="ok-btn" data-act="done" data-id="${o.id}">تم التنفيذ ✓</button>`:`<button class="danger" data-act="undone" data-id="${o.id}">إعادة فتح</button>`}
+        <button class="danger" data-act="del" data-id="${o.id}"><svg class="ic"><use href="#i-trash"/></svg> حذف</button>
+      </div>
+    </div>`).join(''):'<p class="empty">لا توجد طلبات في هذا القسم حالياً</p>';
+  $$('#orders-list [data-act]').forEach(b=>b.addEventListener('click',async()=>{
+    const o=S.orders.find(x=>x.id===b.dataset.id);if(!o)return;
+    try{
+      if(b.dataset.act==='del'){if(!confirm('حذف هذا الطلب نهائياً؟'))return;S.orders=S.orders.filter(x=>x.id!==o.id);await removeOrder(o.id)}
+      else{o.status=b.dataset.act==='done'?'done':'new';await saveOrder(o)}
+      renderOrders();toast('تم التحديث');
+    }catch(e){toast('تعذر التعديل — تأكد من تسجيل دخول المدير')}
+  }));
+}
+
+/* ---- إدارة الخدمات والأقسام ---- */
+function fileToLogo(file){
+  return new Promise((res,rej)=>{
+    const rd=new FileReader();
+    rd.onload=()=>{
+      const img=new Image();
+      img.onload=()=>{
+        const c=document.createElement('canvas');c.width=c.height=256;
+        const x=c.getContext('2d');
+        x.fillStyle='#FFFFFF';x.fillRect(0,0,256,256);
+        const s=Math.min(256/img.width,256/img.height);
+        x.drawImage(img,(256-img.width*s)/2,(256-img.height*s)/2,img.width*s,img.height*s);
+        res(c.toDataURL('image/jpeg',.85));
+      };
+      img.onerror=rej;img.src=rd.result;
+    };
+    rd.onerror=rej;rd.readAsDataURL(file);
+  });
+}
+function renderSvcAdmin(){
+  $('#admin-services-list').innerHTML=`
+  <div class="a-card">
+    <div class="a-title"><b>➕ إضافة خدمة جديدة</b></div>
+    <div class="a-row" style="margin-top:10px">
+      <input class="a-in" id="ns-name" placeholder="اسم الخدمة (مثال: خدمات سناب شات)">
+      <input class="a-in" id="ns-desc" placeholder="وصف قصير">
+      <select class="a-in" style="flex:0 0 auto" id="ns-icon">
+        <option value="ig">أيقونة انستقرام</option><option value="tg">أيقونة تيليجرام</option>
+        <option value="tk">أيقونة تيك توك</option><option value="wa">أيقونة واتساب</option>
+        <option value="gl">أيقونة جوجل</option><option value="bl">أيقونة عامّة</option>
+      </select>
+      <label class="file-btn">🖼 شعار (لوجو)<input type="file" id="ns-logo" accept="image/*"></label>
+      <img class="logo-prev" id="ns-logo-prev">
+      <button class="btn btn-gold btn-xs" id="ns-add">إضافة الخدمة</button>
+    </div>
+  </div>
+  ${S.services.map(s=>`
+  <div class="a-card" data-sid="${s.id}">
+    <div class="a-row">
+      <div class="a-title">${s.logo?`<img src="${s.logo}">`:`<span class="mono">${esc((s.name||'ب').trim().charAt(0))}</span>`}<b>${esc(s.name)}</b><span class="a-sub">${(s.sections||[]).length} قسم</span></div>
+      <span style="flex:1"></span>
+      <label class="file-btn">تغيير الشعار<input type="file" data-logo="${s.id}" accept="image/*"></label>
+      <button class="danger" data-del-svc="${s.id}"><svg class="ic"><use href="#i-trash"/></svg> حذف الخدمة</button>
+    </div>
+    <div class="a-row" style="margin-top:10px">
+      <input class="a-in" data-sname="${s.id}" value="${esc(s.name)}" placeholder="اسم الخدمة">
+      <input class="a-in" data-sdesc="${s.id}" value="${esc(s.desc||'')}" placeholder="الوصف">
+    </div>
+    <div class="a-secs">
+      ${(s.sections||[]).map(c=>`
+      <div class="a-secrow">
+        <input class="a-in" data-cname="${c.id}" value="${esc(c.name)}">
+        <input class="a-in" data-cdesc="${c.id}" value="${esc(c.desc||'')}" placeholder="وصف القسم">
+        <input class="a-in" data-copt="${c.id}" value="${esc((c.options||[]).join(' | '))}" placeholder="خيارات المشكلة مفصولة بـ |">
+        <button class="danger" data-del-sec="${c.id}" data-in="${s.id}">حذف</button>
+      </div>`).join('')||'<p class="a-sub" style="padding:6px">لا توجد أقسام — أضف قسماً بالأسفل</p>'}
+      <div class="a-row" style="margin-top:8px">
+        <span class="a-mini">➕ قسم جديد:</span>
+        <input class="a-in" data-newc-name="${s.id}" placeholder="اسم القسم">
+        <input class="a-in" data-newc-desc="${s.id}" placeholder="وصف القسم">
+        <input class="a-in" data-newc-opt="${s.id}" placeholder="خيارات المشكلة مفصولة بـ |">
+        <button class="btn btn-dark btn-xs" data-add-sec="${s.id}">إضافة القسم</button>
+      </div>
+    </div>
+    <div class="a-row" style="margin-top:8px">
+      <button class="btn btn-ghost btn-xs" data-save-svc="${s.id}">💾 حفظ تعديل هذه الخدمة</button>
+    </div>
+  </div>`).join('')}
+  <p class="a-sub" style="margin:6px 2px">💡 تعديل الاسم/الوصف لا يظهر إلا بعد ضغط «حفظ تعديل هذه الخدمة» لكل بطاقة.</p>`;
+  // إضافة خدمة
+  let nsLogo=null;
+  $('#ns-logo').addEventListener('change',async e=>{
+    const f=e.target.files[0];if(!f)return;
+    nsLogo=await fileToLogo(f);const p=$('#ns-logo-prev');p.src=nsLogo;p.style.display='block';
+  });
+  $('#ns-add').addEventListener('click',async()=>{
+    const name=$('#ns-name').value.trim();if(!name)return toast('اكتب اسم الخدمة أولاً');
+    S.services.push({id:uid(),name,desc:$('#ns-desc').value.trim(),logo:nsLogo,icon:$('#ns-icon').value,sections:[]});
+    if(!await guard(saveServices()))return;renderSvcAdmin();renderHome();toast('تمت إضافة الخدمة');
+  });
+  // تغيير شعار خدمة موجودة
+  $$('#admin-services-list [data-logo]').forEach(inp=>inp.addEventListener('change',async e=>{
+    const f=e.target.files[0];if(!f)return;
+    const s=S.services.find(x=>x.id===e.target.dataset.logo);
+    s.logo=await fileToLogo(f);if(!await guard(saveServices()))return;renderSvcAdmin();renderHome();toast('تم تحديث الشعار');
+  }));
+  // حذف خدمة
+  $$('#admin-services-list [data-del-svc]').forEach(b=>b.addEventListener('click',async()=>{
+    const s=S.services.find(x=>x.id===b.dataset.delSvc);
+    if(!confirm(`حذف خدمة «${s.name}» بكل أقسامها؟`))return;
+    S.services=S.services.filter(x=>x.id!==s.id);
+    if(!await guard(saveServices()))return;renderSvcAdmin();renderHome();toast('تم حذف الخدمة');
+  }));
+  // حذف قسم
+  $$('#admin-services-list [data-del-sec]').forEach(b=>b.addEventListener('click',async()=>{
+    const s=S.services.find(x=>x.id===b.dataset.in);
+    const c=s.sections.find(x=>x.id===b.dataset.delSec);
+    if(!confirm(`حذف قسم «${c.name}»؟`))return;
+    s.sections=s.sections.filter(x=>x.id!==c.id);
+    if(!await guard(saveServices()))return;renderSvcAdmin();renderHome();toast('تم حذف القسم');
+  }));
+  // إضافة قسم
+  $$('#admin-services-list [data-add-sec]').forEach(b=>b.addEventListener('click',async()=>{
+    const s=S.services.find(x=>x.id===b.dataset.addSec);
+    const name=$(`[data-newc-name="${s.id}"]`).value.trim();
+    if(!name)return toast('اكتب اسم القسم');
+    const opt=$(`[data-newc-opt="${s.id}"]`).value.split('|').map(x=>x.trim()).filter(Boolean);
+    s.sections=s.sections||[];
+    s.sections.push({id:uid(),name,desc:$(`[data-newc-desc="${s.id}"]`).value.trim(),options:opt});
+    if(!await guard(saveServices()))return;renderSvcAdmin();renderHome();toast('تمت إضافة القسم');
+  }));
+  // حفظ تعديلات خدمة
+  $$('#admin-services-list [data-save-svc]').forEach(b=>b.addEventListener('click',async()=>{
+    const s=S.services.find(x=>x.id===b.dataset.saveSvc);
+    s.name=$(`[data-sname="${s.id}"]`).value.trim()||s.name;
+    s.desc=$(`[data-sdesc="${s.id}"]`).value.trim();
+    (s.sections||[]).forEach(c=>{
+      const n=$(`[data-cname="${c.id}"]`);if(n)c.name=n.value.trim()||c.name;
+      const d=$(`[data-cdesc="${c.id}"]`);if(d)c.desc=d.value.trim();
+      const o=$(`[data-copt="${c.id}"]`);if(o)c.options=o.value.split('|').map(x=>x.trim()).filter(Boolean);
+    });
+    if(!await guard(saveServices()))return;renderSvcAdmin();renderHome();toast('تم حفظ التعديلات ✓');
+  }));
+}
+
+/* ---- الزيارات والإحصاء ---- */
+async function renderStats(){
+  $('#stats-body').innerHTML=`
+    <div class="big-stat">
+      <div class="stat"><b id="st-visits">${fmtN(S.visits)}</b><span>إجمالي الزيارات</span></div>
+      <div class="stat"><b>${fmtN(S.orders.length)}</b><span>إجمالي الطلبات</span></div>
+      <div class="stat"><b>${fmtN(S.orders.filter(o=>o.status==='new').length)}</b><span>طلبات جديدة</span></div>
+      <div class="stat"><b>${fmtN(S.settings.members)}</b><span>عدد الأعضاء المعروض</span></div>
+    </div>
+    <div class="a-card">
+      <div class="a-title"><b>حالة التخزين</b></div>
+      <p class="a-sub" style="margin:6px 0">${MODE==='firebase'?(RULES_LOCKED?'🔒 قاعدة البيانات متصلة لكن قواعد Rules تمنع القراءة والكتابة: انشر القواعد المرسلة لك في Firebase Console ‹ Realtime Database ‹ Rules لتفعيل الزيارات والطلبات على السيرفر.':'✅ متصل بـ Firebase Realtime Database — الزيارات والطلبات محفوظة على السيرفر ومشتركة بين جميع الأجهزة.'):'⚠️ وضع تجريبي محلي: البيانات محفوظة في هذا الجهاز فقط. اربط مشروعك من تبويب «الإعدادات» لتحصي زواراً حقيقيين.'}</p>MODE==='firebase'?'✅ متصل بـ Firebase Realtime Database — الزيارات والطلبات محفوظة على السيرفر ومشتركة بين جميع الأجهزة.':'⚠️ وضع تجريبي محلي: البيانات محفوظة في هذا الجهاز فقط. اربط مشروعك من تبويب «الإعدادات» لتحصي زواراً حقيقيين.'}</p>
+      <div class="a-row">
+        <button class="btn btn-ghost btn-xs" id="st-refresh">تحديث الأرقام</button>
+        <button class="danger" id="st-reset">تصفير عدّاد الزيارات</button>
+      </div>
+    </div>`;
+  $('#st-refresh').addEventListener('click',async()=>{await loadAll();renderStats();applyBranding();toast('تم التحديث')});
+  $('#st-reset').addEventListener('click',async()=>{
+    if(!confirm('تصفير عدّاد الزيارات؟'))return;
+    if(await guard(dbSet('stats/visitors',0))){await loadAll();renderStats();applyBranding();toast('تم التصفير')}
+  });
+}
+
+/* ---- الإعدادات ---- */
+function renderSettingsForm(){
+  const cur=activeConfig();
+  $('#settings-body').innerHTML=`
+    <div class="a-card">
+      <div class="a-title"><b>بيانات التواصل</b></div>
+      <div class="a-row" style="margin-top:10px">
+        <span class="a-mini">رقم الواتساب</span><input class="a-in" id="st-wa" value="${esc(S.settings.whatsapp)}" dir="ltr" placeholder="07xxxxxxxxx">
+        <span class="a-mini">يوزر انستقرام</span><input class="a-in" id="st-ig" value="${esc(S.settings.instagram)}" placeholder="@username">
+        <span class="a-mini">عدد الأعضاء المعروض</span><input class="a-in" id="st-members" type="number" value="${Number(S.settings.members)||8000}">
+        <span class="a-mini">رمز للوضع المحلي فقط (اللوحة متاحة بالبريد عند الاتصال بفايربيز)</span><input class="a-in" id="st-pin" value="${esc(S.settings.pin||'')}" placeholder="اختياري — للوضع المحلي فقط" dir="ltr">
+      </div>
+      <button class="btn btn-gold btn-xs" id="st-save" style="margin-top:12px">حفظ بيانات التواصل</button>
+    </div>
+    <div class="a-card">
+      <div class="a-title"><b>ربط Firebase والدخول بالبريد</b></div>
+      <p class="a-sub" style="margin:6px 0;line-height:2">إعدادات مشروعك <b dir="ltr">baso-af795</b> مضمّنة في الصفحة ✅ — لتفعيل العمل الكامل:<br>
+      1) Firebase Console › <b>Authentication</b> › Get started › فعل طريقة <b>Email/Password</b><br>
+      2) من <b>Authentication › Users</b> اضغط Add User وأنشئ حساب مدير (بريد + كلمة مرور) — به تُفتح اللوحة الآن<br>
+      3) من <b>Realtime Database › Rules</b> الصق محتوى ملف firebase-rules.json واضغط Publish<br>
+      4) أعد تحميل الصفحة وادخل <b>#baso</b> وسجّل بالبريد — الشارة فوق تُظهر «متصل بـ Firebase»</p>
+      <textarea class="a-in" id="st-fb" rows="7" dir="ltr" style="width:100%;font-family:monospace;font-size:12px" placeholder='{"apiKey":"...","databaseURL":"...","projectId":"..."}'></textarea>
+      <div class="a-row" style="margin-top:10px">
+        <button class="btn btn-gold btn-xs" id="st-fb-save">حفظ وإعادة تحميل</button>
+        <button class="danger" id="st-fb-clear">فصل Firebase (وضع محلي)</button>
+        <span class="a-sub">الحالة الحالية: <b>${MODE==='firebase'?'متصل ✓':'محلي'}</b></span>
+      </div>
+    </div>`;
+  $('#st-fb').value=cur&&cur.apiKey?JSON.stringify(cur,null,1):'';
+  $('#st-save').addEventListener('click',async()=>{
+    S.settings.whatsapp=$('#st-wa').value.trim()||'07726446644';
+    S.settings.instagram=$('#st-ig').value.trim()||'@muhaymin_baso';
+    S.settings.members=Math.max(0,Number($('#st-members').value)||8000);
+    S.settings.pin=$('#st-pin').value.trim();
+    if(await guard(saveSettings())){applyBranding();toast('تم حفظ الإعدادات ✓')}
+  });
+  $('#st-fb-save').addEventListener('click',()=>{
+    try{
+      const j=JSON.parse($('#st-fb').value);
+      if(!j.apiKey||!j.databaseURL)throw new Error('apiKey و databaseURL مطلوبان');
+      localStorage.setItem(CONFIG_LS,JSON.stringify(j));
+      toast('تم الحفظ، جارٍ إعادة التحميل…');setTimeout(()=>location.reload(),800);
+    }catch(e){toast('JSON غير صحيح: '+e.message)}
+  });
+  $('#st-fb-clear').addEventListener('click',()=>{localStorage.removeItem(CONFIG_LS);toast('تم الفصل، إعادة التحميل…');setTimeout(()=>location.reload(),600)});
+}
+
+/* ===== تفضيلات العرض فقط: لا تكتب إلى Firebase ===== */
+const DEVICE_PREF_KEY='baso.device.preference';
+const THEME_PREF_KEY='baso.theme.preference';
+function applyTheme(mode){
+  const dark=mode==='dark';
+  document.documentElement.classList.toggle('dark-mode',dark);
+  const b=$('#theme-toggle');
+  if(b)b.textContent=dark?'☀️ الوضع النهاري':'🌙 الوضع الليلي';
+  try{localStorage.setItem(THEME_PREF_KEY,dark?'dark':'light')}catch(e){}
+}
+function setupDeviceAndTheme(){
+  let theme='light';
+  try{theme=localStorage.getItem(THEME_PREF_KEY)||'light'}catch(e){}
+  applyTheme(theme);
+  $('#theme-toggle')?.addEventListener('click',()=>{
+    applyTheme(document.documentElement.classList.contains('dark-mode')?'light':'dark');
+  });
+  let saved='';
+  try{saved=localStorage.getItem(DEVICE_PREF_KEY)||''}catch(e){}
+  const modal=$('#device-choice');
+  const applyDevice=device=>{
+    document.body.classList.remove('device-phone','device-tablet','device-computer');
+    if(device)document.body.classList.add('device-'+device);
+    try{localStorage.setItem(DEVICE_PREF_KEY,device||'auto')}catch(e){}
+    modal.hidden=true;
+  };
+  if(saved && saved!=='auto')applyDevice(saved);
+  else if(!saved){
+    modal.hidden=false;
+    modal.querySelectorAll('[data-device]').forEach(b=>b.addEventListener('click',()=>applyDevice(b.dataset.device)));
+    $('#device-auto').addEventListener('click',()=>{
+      const w=window.innerWidth;
+      applyDevice(w<700?'phone':w<1100?'tablet':'computer');
+      try{localStorage.setItem(DEVICE_PREF_KEY,'auto')}catch(e){}
+    });
+  }else{
+    const w=window.innerWidth;
+    applyDevice(w<700?'phone':w<1100?'tablet':'computer');
+    try{localStorage.setItem(DEVICE_PREF_KEY,'auto')}catch(e){}
+  }
+  window.addEventListener('resize',()=>{
+    let pref='';try{pref=localStorage.getItem(DEVICE_PREF_KEY)||''}catch(e){}
+    if(pref==='auto'){
+      document.body.classList.remove('device-phone','device-tablet','device-computer');
+      document.body.classList.add('device-'+(window.innerWidth<700?'phone':window.innerWidth<1100?'tablet':'computer'));
+    }
+  },{passive:true});
+}
+
+/* ================= التشغيل ================= */
+async function boot(){
+  setupDeviceAndTheme();
+  runIntro();
+  await initFirebase();
+  await loadAll();
+  await countVisit();
+  applyBranding();renderHome();bindOrderModal();
+  $('#brand-home').addEventListener('click',e=>{e.preventDefault();showView('home')});
+  $('#btn-back').addEventListener('click',()=>showView('home'));
+  $('#am-close').addEventListener('click',()=>{if(location.hash===ADMIN_HASH)history.replaceState(null,'',location.pathname+location.search)});
+  $('#am-logout').addEventListener('click',fbLogout);
+  $('#admin-unlock').addEventListener('click',unlockAdmin);
+  $('#admin-pin').addEventListener('keydown',e=>{if(e.key==='Enter')unlockAdmin()});
+  $('#fb-login').addEventListener('click',fbLogin);
+  $('#fb-pass').addEventListener('keydown',e=>{if(e.key==='Enter')fbLogin()});
+  $$('.atab').forEach(t=>t.addEventListener('click',()=>{
+    $$('.atab').forEach(x=>x.classList.remove('active'));t.classList.add('active');
+    $$('.tab-pane').forEach(p=>p.classList.remove('active'));
+    $('#tab-'+t.dataset.tab).classList.add('active');
+  }));
+  window.addEventListener('hashchange',handleHash);
+  handleHash();
+  setInterval(async()=>{
+    const openAdmin=$('#modal-admin').classList.contains('open');
+    if(openAdmin&&(!S.settings.pin||adminUnlocked())){
+      await refreshAdminData();
+      renderOrders();
+      const el=$('#st-visits');if(el){el.textContent=fmtN(S.visits);applyBranding()}
+    }
+  },20000);
+}
+boot();
+
+</script>
+</body>
+</html>
